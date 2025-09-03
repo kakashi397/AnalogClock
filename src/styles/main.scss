@@ -91,10 +91,7 @@ h1 {
     transform: translate(-50%, -50%);
   }
 
-  &__12,
-  &__3,
-  &__6,
-  &__9 {
+  &__number {
     font-family: "El Messiri", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -102,29 +99,32 @@ h1 {
     font-size: 90px;
     line-height: 1;
     position: absolute;
-  }
-
-  &__12 {
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  &__3 {
-    right: 5%;
     top: 50%;
-    transform: translateY(-50%);
-  }
-
-  &__6 {
     left: 50%;
-    bottom: 5%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
   }
 
-  &__9 {
-    top: 50%;
-    left: 5%;
-    transform: translateY(-50%);
-  }
+  // &__12 {
+  //   top: 5%;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  // }
+
+  // &__3 {
+  //   right: 5%;
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  // }
+
+  // &__6 {
+  //   left: 50%;
+  //   bottom: 5%;
+  //   transform: translateX(-50%);
+  // }
+
+  // &__9 {
+  //   top: 50%;
+  //   left: 5%;
+  //   transform: translateY(-50%);
+  // }
 }
