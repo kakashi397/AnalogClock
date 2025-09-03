@@ -1,0 +1,130 @@
+body {
+  background-color: papayawhip;
+}
+
+.container {
+  width: 900px;
+  margin-inline: auto;
+}
+
+h1 {
+  width: max-content;
+  margin-inline: auto;
+}
+
+.clock {
+  aspect-ratio: 1/1;
+  width: 600px;
+  background-color: ivory;
+  position: relative;
+
+  &__wrapper {
+    margin-top: 100px;
+    margin-inline: auto;
+    width: max-content;
+  }
+
+  &__edge {
+    border: 8px black solid;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+    /*
+      - inset: 内側の影
+      - 0px 0px: 水平・垂直方向のオフセットなし（中央に影）
+      - 15px: ぼかしの強さ
+      - 5px: 影の広がり具合（時計の内側に向かって少し広げる）
+      - rgba(0, 0, 0, 0.3): 半透明の黒色
+    */
+  }
+
+  &__hour {
+    display: block;
+    width: 5%;
+    height: 35%;
+    background-color: black;
+    border-radius: 30%;
+    clip-path: polygon(35% 0, 65% 0, 100% 100%, 60% 100%, 40% 100%, 0 100%);
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+    transform-origin: center 86%;
+  }
+
+  &__min {
+    display: block;
+    width: 3%;
+    height: 50%;
+    background-color: black;
+    border-radius: 30%;
+    clip-path: polygon(35% 0, 65% 0, 100% 100%, 60% 100%, 40% 100%, 0 100%);
+    position: absolute;
+    bottom: 45%;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    transform-origin: center 90%;
+  }
+
+  &__sec {
+    display: block;
+    width: 1%;
+    height: 50%;
+    background-color: red;
+    border-radius: 30%;
+    clip-path: polygon(35% 0, 65% 0, 100% 100%, 60% 100%, 40% 100%, 0 100%);
+    position: absolute;
+    bottom: 45%;
+    left: 50%;
+    transform: translateX(-50%) rotate(194deg);
+    transform-origin: center 90%;
+  }
+
+  &__shaft {
+    display: block;
+    width: 3%;
+    height: 3%;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__12,
+  &__3,
+  &__6,
+  &__9 {
+    font-family: "El Messiri", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 90px;
+    line-height: 1;
+    position: absolute;
+  }
+
+  &__12 {
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__3 {
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__6 {
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+  }
+
+  &__9 {
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+  }
+}

@@ -1,24 +1,19 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import './styles/main.scss';
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const tickClock = () => {
+  /* 現在の時分秒を取得 */
+  const time = new Date();
+  const hour = time.getHours();
+  const min = time.getMinutes();
+  const sec = time.getSeconds();
 
-setupCounter(document.querySelector('#counter'))
+  /* 時針分針秒針が進む角度を求めている */
+  const hourDeg = (hour % 12) * 30 + (min / 60) * 30
+  const minDeg = min * 6 + (sec / 60) * 6;
+  const secDeg = sec * 6
+
+  document.querySelector('#hour').style.transform = `translateX(-50%) rotate(${hourDeg}deg)`;
+  document.querySelector('#min').style.transform = `translateX(-50%) rotate(${minDeg}deg)`;
+  document.querySelector('#sec').style.transform = `translateX(-50%) rotate(${secDeg}deg)`;
+};
+setInterval(tickClock, 100);

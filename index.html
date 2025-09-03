@@ -1,13 +1,35 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/sanitize.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=VT323&display=swap"
+    rel="stylesheet">
+  <title>Analog Clock</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Analog clock</h1>
+    <div class="clock__wrapper">
+      <div class="clock clock__edge">
+        <span id="hour" class="clock__hour"></span>
+        <span id="min" class="clock__min"></span>
+        <span id="sec" class="clock__sec"></span>
+        <span class="clock__shaft"></span>
+        <span class="clock__12">12</span>
+        <span class="clock__3">3</span>
+        <span class="clock__6">6</span>
+        <span class="clock__9">9</span>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+
 </html>
