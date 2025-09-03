@@ -4,6 +4,10 @@ import './styles/main.scss';
 /* ----- 
 針を動かすコード
 ----- */
+const hourHand = document.querySelector('#hour');
+const minHand = document.querySelector('#min');
+const secHand = document.querySelector('#sec');
+
 const tickClock = () => {
   /* 現在の時分秒を取得 */
   const time = new Date();
@@ -17,9 +21,9 @@ const tickClock = () => {
   const secDeg = sec * 6
 
   /* 求めた角度をtransformプロパティの値にあててる */
-  document.querySelector('#hour').style.transform = `translateX(-50%) rotate(${hourDeg}deg)`;
-  document.querySelector('#min').style.transform = `translateX(-50%) rotate(${minDeg}deg)`;
-  document.querySelector('#sec').style.transform = `translateX(-50%) rotate(${secDeg}deg)`;
+  hourHand.style.transform = `rotate(${hourDeg}deg)`;
+  minHand.style.transform = `rotate(${minDeg}deg)`;
+  secHand.style.transform = `rotate(${secDeg}deg)`;
 };
 
 
@@ -31,7 +35,7 @@ const makeClockFace = () => {
   for (let i = 1; i <= 60; i++) {
     const tick = document.createElement('span'); // spanを60個生成
     const degree = i * 6;
-    
+
     if (i % 15 === 0) { // 15の倍数の時
       tick.classList.add('clock__number');
       tick.textContent = (i / 5) === 12 ? 12 : i / 5;
@@ -43,10 +47,10 @@ const makeClockFace = () => {
       tick.classList.add('clock__minor-tick');
       tick.style.transform = `translate(-50%, -50%) rotate(${degree}deg) translateY(-290px)`;
     }
-    
+
     clock.appendChild(tick);
   }
-}
+};
 
 
 

@@ -28,13 +28,6 @@ h1 {
     border: 8px black solid;
     border-radius: 50%;
     box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
-    /*
-      - inset: 内側の影
-      - 0px 0px: 水平・垂直方向のオフセットなし（中央に影）
-      - 15px: ぼかしの強さ
-      - 5px: 影の広がり具合（時計の内側に向かって少し広げる）
-      - rgba(0, 0, 0, 0.3): 半透明の黒色
-    */
   }
 
   &__hour {
@@ -47,7 +40,7 @@ h1 {
     position: absolute;
     top: 20%;
     left: 50%;
-    transform: translateX(-50%) rotate(-45deg);
+    transform: translateX(-50%);
     transform-origin: center 86%;
   }
 
@@ -61,7 +54,7 @@ h1 {
     position: absolute;
     bottom: 45%;
     left: 50%;
-    transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%);
     transform-origin: center 90%;
   }
 
@@ -76,7 +69,7 @@ h1 {
     bottom: 45%;
     left: 50%;
     z-index: 100;
-    transform: translateX(-50%) rotate(194deg);
+    transform: translateX(-50%);
     transform-origin: center 90%;
   }
 
@@ -117,28 +110,4 @@ h1 {
     top: 50%;
     left: 50%;
   }
-
-  // &__12 {
-  //   top: 5%;
-  //   left: 50%;
-  //   transform: translateX(-50%);
-  // }
-
-  // &__3 {
-  //   right: 5%;
-  //   top: 50%;
-  //   transform: translateY(-50%);
-  // }
-
-  // &__6 {
-  //   left: 50%;
-  //   bottom: 5%;
-  //   transform: translateX(-50%);
-  // }
-
-  // &__9 {
-  //   top: 50%;
-  //   left: 5%;
-  //   transform: translateY(-50%);
-  // }
 }
